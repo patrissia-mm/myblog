@@ -4,6 +4,8 @@ from django.conf import settings
 from model_utils.models import TimeStampedModel
 from ckeditor_uploader.fields import RichTextUploadingField
 
+from .managers import EntryManager
+
 class Category(TimeStampedModel):
     """ Categorías de una entrada """
     short_name = models.CharField(
@@ -65,6 +67,8 @@ class Entry(TimeStampedModel):
     portada = models.BooleanField(default=False)
     in_home = models.BooleanField(default=False)
     slug = models.SlugField(editable=False, max_length=300)
+
+    objects = EntryManager()
 
     class Meta:
         verbose_name = 'Entrada'
