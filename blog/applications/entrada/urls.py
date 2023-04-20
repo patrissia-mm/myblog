@@ -7,12 +7,12 @@ urlpatterns = [
     path(
         'entradas/',
         views.EntryListView.as_view(),
-        name='entry-lista'
+        name='entry-lista',
     ),
     path(
-        'entrada/<pk>',
+        'entrada/<slug>',
         views.EntryDetailView.as_view(),
-        name='entry-detail'
+        name='entry-detail',
     ),
 ]
 
